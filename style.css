@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+div{
+    display: flex;
+    justify-content: center;
+   
+    
+}
+body{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#triangulo-cima{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 300px solid rgb(8, 228, 8);
+    
+    box-shadow: 10px black;
+}
+
+#triangulo-cima:hover{
+    border-bottom: 300px solid rgb(3, 85, 3);
+    
+    cursor: pointer;
+    transition: 400ms;
+}
+
+#triangulo-baixo{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 300px solid rgb(0, 132, 255);
+    
+}
+
+#triangulo-baixo:hover{
+    border-top: 300px solid blue;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+#triangulo-esquerda{
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 350px solid rgba(121, 27, 216, 0.836);
+    
+}
+
+#triangulo-esquerda:hover{
+    border-right: 350px solid rgb(126, 3, 248);
+    cursor: pointer;
+    transition: 400ms;
+}
+
+
+#triangulo-direita{
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 350px solid orange;
+}
+
+#triangulo-direita:hover{
+    border-left: 350px solid orangered;
+    cursor: pointer;
+    /*box-shadow: 10px 5px 5px black;*/
+    transition: 400ms;
+}
+
+#circle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    right: 44.5%;
+    bottom: 32%;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#pontuacao{
+    height: 200px;
+    width: 200px;
+    background-color: aquamarine;
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    border-radius: 25px;
+    text-align: center;
+    flex-direction: column;
+}

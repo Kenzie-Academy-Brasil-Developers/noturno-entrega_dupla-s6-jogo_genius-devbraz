@@ -5,27 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Genius</title>
+    <title>Genius Game</title>
 </head>
 <body>
     <div id="cima">
-        <div id="triangulo-cima"></div>
+        <div class="game-name"> GENIUS</div>
+        <div class="game-name1"> GAME</div>
+        <div class="triangulo-cima-apagado triangulo-cima-aceso" id="1"></div>
     </div>
     <div id="meio">
-        <div id="triangulo-esquerda"></div>
-        <div id="triangulo-direita"></div>
+        <div class="triangulo-esquerda-apagado triangulo-esquerda-aceso" id="4"></div>
+        <div id="square" class="gradient-border" ></div>
+        <div id="circle" class="border-efect" >
+            <button>START!</button>
+        </div>
+        <div class="triangulo-direita-apagado triangulo-direita-aceso" id="2"></div>
     </div>
     <div id="baixo">
-        <div id="triangulo-baixo"></div>
+        <div class="game-developers"> DEVS: </div>
+        <div class="game-developers-charles rainbow-text"> Charles Braz </div>
+        <div class="game-developers-claudio rainbow-text"> Claudio Inácio </div>
+        <div class="triangulo-baixo-apagado triangulo-baixo-aceso" id="3"></div>
     </div>
-    <div id="circle">
-        <button>Começar</button>
-    </div>
-    <div id="pontuacao">
+
+    <!-- <div id="pontuacao">
         <h1>placar</h1>
         <p>sua pontuacao: 5</p>
         <p>maior pontuacao: 10</p>
         <p>voce errou na 3 sequencia</p>
-    </div>
+    </div> -->
+
+    <script src="./script.js"></script>
+    
 </body>
 </html>

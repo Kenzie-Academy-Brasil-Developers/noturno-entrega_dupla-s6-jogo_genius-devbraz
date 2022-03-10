@@ -40,6 +40,7 @@ body{
     border-left: 62.5px solid transparent;
     border-right: 62.5px solid transparent;
     border-bottom: 375px solid rgb(0, 85, 0);
+    cursor: pointer;
 }
 
 .triangulo-baixo-aceso{
@@ -58,6 +59,7 @@ body{
     border-left: 62.5px solid transparent;
     border-right: 62.5px solid transparent;
     border-top: 375px solid rgb(14, 14, 136);
+    cursor: pointer;
     
 }
 
@@ -76,7 +78,8 @@ body{
     height: 0;
     border-top: 62.5px solid transparent;
     border-bottom: 62.5px solid transparent;
-    border-right: 437.5px solid rgb(82, 0, 163);    
+    border-right: 437.5px solid rgb(82, 0, 163);   
+    cursor: pointer; 
 }
 
 .triangulo-direita-aceso{
@@ -95,6 +98,7 @@ body{
     border-top: 62.5px solid transparent;
     border-bottom: 62.5px solid transparent;
     border-left: 437.5px solid rgb(126, 34, 0);
+    cursor: pointer;
 }
 
 
@@ -135,6 +139,16 @@ button {
 
 button:hover{
     cursor: pointer;
+}
+
+.display {
+    display: none;
+}
+
+p {
+    color: white;
+    transform: rotate(-45deg);
+    font-family: 'Raleway', sans-serif;
 }
 
 /* #pontuacao{

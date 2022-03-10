@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
     <title>Genius Game</title>
 </head>
 <body>
     <div id="cima">
         <div class="game-name"> GENIUS</div>
         <div class="game-name1"> GAME</div>
-        <div class="triangulo-cima-apagado triangulo-cima-aceso" id="1"></div>
+        <div class="triangulo-cima triangulo-cima-apagado" id="1"></div>
     </div>
     <div id="meio">
-        <div class="triangulo-esquerda-apagado triangulo-esquerda-aceso" id="4"></div>
+        <div class="triangulo-esquerda triangulo-esquerda-apagado" id="4"></div>
         <div id="square" class="gradient-border" ></div>
         <div id="circle" class="border-efect" >
-            <button>START!</button>
+            <button id="start-button">START!</button>
         </div>
-        <div class="triangulo-direita-apagado triangulo-direita-aceso" id="2"></div>
+        <div class="triangulo-direita triangulo-direita-apagado" id="2"></div>
     </div>
     <div id="baixo">
         <div class="game-developers"> DEVS: </div>
         <div class="game-developers-charles rainbow-text"> Charles Braz </div>
         <div class="game-developers-claudio rainbow-text"> Claudio Inácio </div>
-        <div class="triangulo-baixo-apagado triangulo-baixo-aceso" id="3"></div>
+        <div class="triangulo-baixo triangulo-baixo-apagado" id="3"></div>
     </div>
 
     <!-- <div id="pontuacao">
@@ -35,7 +35,8 @@
         <p>voce errou na 3 sequencia</p>
     </div> -->
 
-    <script src="./script.js"></script>
+    <script src="./src/js/script.js"></script>
+    <script src="./src/js/luzes.js"></script>
     
 </body>
 </html>

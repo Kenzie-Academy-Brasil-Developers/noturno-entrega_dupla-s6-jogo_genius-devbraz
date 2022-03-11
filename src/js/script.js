@@ -144,73 +144,7 @@ const validacao = () => {
           addPontuacao(quantidadeVitoria)
           p.innerText = 'Infelizmente você perdeu.'
           divCircle.innerHTML = ''
-
-          startButton = chosenStartButton.addEventListener('click', (event)=>{
-
-
-               chosenStartButton.classList.add('display')
-               p.innerText = 'Seja bem vindo!'
-          
-               setTimeout(() => {
-          
-                    p.innerText = 'O jogo vai começar em breve...'
-          
-                    setTimeout(() => {
-                         p.innerText = 'Observe a sequencia a seguir:'
-          
-                         setTimeout(() => {
-          
-                              arrayMaquina()
-          
-                              const div1 = document.getElementById('1');
-                              div1.addEventListener('click', () => { 
-                                   sequenciaJogador.push(1)
-                                   acenderLuzSetaCima()
-                                   setTimeout(() => {
-                                        apagarLuzSetaCima()
-                                   }, 600)
-                                   validacao();
-                              })
-                              
-                              const div2 = document.getElementById('2');
-                              div2.addEventListener('click', () => {
-                                   sequenciaJogador.push(2)
-                                   acenderLuzSetaDireita()
-                                   setTimeout(() => {
-                                        apagarLuzSetaDireita()
-                                   }, 600)
-                                   validacao();
-                              })
-                              
-                              const div3 = document.getElementById('3');
-                              div3.addEventListener('click', () => {
-                                   sequenciaJogador.push(3)
-                         
-                                   acenderLuzSetaBaixo()
-                                   setTimeout(() => {
-                                        apagarLuzSetaBaixo()
-                                   }, 600) 
-                                   validacao();
-                              })
-                              
-                              const div4 = document.getElementById('4');
-                              div4.addEventListener('click', () => {
-                                   sequenciaJogador.push(4)
-                         
-                                   acenderLuzSetaEsquerda()
-                                   setTimeout(() => {
-                                        apagarLuzSetaEsquerda()
-                                   }, 600) 
-                                   validacao();             
-                              })
-          
-                         }, 2000)
-          
-                    }, 2000)
-          
-               }, 2000) 
-          
-          })
+          return
      }
 
      if(sequenciaMaquina.length === sequenciaJogador.length){

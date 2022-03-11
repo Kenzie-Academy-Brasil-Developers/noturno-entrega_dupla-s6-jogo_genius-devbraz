@@ -14,6 +14,7 @@ function addPontuacaoAtual(ptAtual){
     placarAtual.innerHTML = `Pontuação Atual: ${ptAtual}`;
 
     pontuacaoLista.appendChild(placarAtual);
+    //*
 }
 
 function addPontuacao(qtdpontos){

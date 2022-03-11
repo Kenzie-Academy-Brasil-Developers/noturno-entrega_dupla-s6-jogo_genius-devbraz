@@ -156,13 +156,40 @@ p {
     width: 200px;
     background-color: aquamarine;
     position: absolute;
-    left: 200px;
-    top: 100px;
+    right: 15%;
+    top: 15%;
     text-align: center;
     flex-direction: column;
     font-family: 'Raleway', sans-serif;
     color: white;
-} */
+    border-radius: 10px;
+    margin: 0px;
+    padding: 0px;
+    justify-content: start;
+    text-decoration: none;
+} 
+
+#pontuacao h1{
+    background-color: rgba(24, 23, 23, 0.788);
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+#pontuacao p{
+    
+    padding: 10px;
+    
+}
+
+#pontuacao ol {
+    list-style: none;
+    padding: 5px;
+}
+
+#pontuacao ol li{
+    padding: 5px;
+}
 
 .gradient-border {
     float: left;
@@ -220,7 +247,7 @@ p {
     font-size: 100px;
     float: left;
     position: absolute;
-    left: 200px;
+    left: 10%;
 }
 
 .game-name1 {
@@ -233,7 +260,7 @@ p {
     font-size: 100px;
     float: left;
     position: absolute;
-    left: 400px;
+    left: 15%;
 }
 
 .game-developers {
@@ -245,8 +272,8 @@ p {
     font-size: 70px;
     float: right;
     position: absolute;
-    right: 500px;
-    bottom: 280px;
+    right: 25%;
+    bottom: 0%;
 }
 
 .game-developers-charles {
@@ -258,8 +285,8 @@ p {
     font-size: 50px;
     float: right;
     position: absolute;
-    right: 250px;
-    bottom: 200px;
+    right: 10%;
+    bottom: -15%;
     color: black;  
 }
 
@@ -272,8 +299,8 @@ p {
     font-size: 50px;
     float: right;
     position: absolute;
-    right: 335px;
-    bottom: 150px;
+    right: 5%;
+    bottom: -23%;
 }
 
 .rainbow-text {

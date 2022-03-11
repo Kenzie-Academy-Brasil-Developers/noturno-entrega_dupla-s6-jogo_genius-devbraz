@@ -1,38 +1,81 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Genius Game</title>
+
 </head>
+
 <body>
+
     <div id="cima">
+
         <div class="game-name"> GENIUS</div>
         <div class="game-name1"> GAME</div>
+
         <div class="triangulo-cima triangulo-cima-apagado" id="1"></div>
+
+        <div class="gradient-border1" id="pontuacao">
+            <h1>Placar</h1>
+        </div> 
+
     </div>
+
     <div id="meio">
+
         <div class="triangulo-esquerda triangulo-esquerda-apagado" id="4"></div>
+
         <div id="square" class="gradient-border" ></div>
         <div id="circle" class="border-efect" >
             <button id="start-button">START!</button>
         </div>
+
         <div class="triangulo-direita triangulo-direita-apagado" id="2"></div>
+
     </div>
+
     <div id="baixo">
+
         <div class="game-developers"> DEVS: </div>
         <div class="game-developers-charles rainbow-text"> Charles Braz </div>
         <div class="game-developers-claudio rainbow-text"> Claudio Inácio </div>
-        <div class="triangulo-baixo triangulo-baixo-apagado" id="3"></div>
-    </div>
 
-     <div id="pontuacao">
-        <h1>placar</h1>
+        <div class="triangulo-baixo triangulo-baixo-apagado" id="3"></div>
+
+        <div class="regras">
+
+            <div>
+                <h1>Regras do Jogo</h1>
+            </div>
+            <li>
+                O Genius irá fazer uma sequência e você deve repeti-la.  
+            </li>
+            <li>
+                Ele começa piscando uma luz. Você deve clicar sobre esta seta que piscou.
+            </li>
+            <li>
+                Na sequência ele irá ascender e apagar uma seta a mais que na rodada anterior.
+            </li>
+
+            <li>
+                Você deve clicar setas na mesma sequência que o programa. 
+            </li>
+            <li>
+                Isso se repetirá até o limite de luzes na seqüência, que você seleciona em Habilidade,
+                que vc aumenta a cada acerto.
+            </li>
+            <li>
+                Se você errar uma luz na seqüência, ele emitirá uma mensagem de derrota.
+            </li>
+        </div>
         
-       
-    </div> 
+    </div>
 
     <script src="./src/js/script.js"></script>
     <script src="./src/js/luzes.js"></script>

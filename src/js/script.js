@@ -5,26 +5,22 @@ const trianguloEsquerda = document.querySelector('.triangulo-esquerda')
 const divCircle = document.querySelector("#circle")
 
 let max = 4
-let cima = 1
-let direita = 2
-let baixo = 3
-let esquerda = 4
 
 function numeroAleatorio(max) {
      return Math.floor(Math.random() * max + 1)
 }
 
-let random = numeroAleatorio(max)
-
 let sequenciaMaquina = []
 let sequenciaJogador = []
 let quantidadeVitoria = 0;
 
-function arrayMaquina(random) {
+function arrayMaquina() {
 
-     sequenciaMaquina.push(random)
+     sequenciaMaquina.push(numeroAleatorio(max))
 
      for (let counter = 0; counter < sequenciaMaquina.length; counter++ ) {
+
+
 
           if(sequenciaMaquina[counter] === 1 ) {
                setTimeout(() => {
@@ -60,64 +56,18 @@ function arrayMaquina(random) {
                     }, 600)  
                }, 600 * counter)   
           }  
+
+
+
      }   
 }
 
-function loopPart() {
-
-     arrayMaquina(random)
-
-     const div1 = document.getElementById('1');
-     div1.addEventListener('click', () => { 
-          sequenciaJogador.push(1)
-          acenderLuzSetaCima()
-          setTimeout(() => {
-               apagarLuzSetaCima()
-          }, 600)  
-         validaDerrota(sequenciaMaquina,sequenciaJogador);
-         mostrarVitoria(sequenciaMaquina,sequenciaJogador)
-     })
-     
-     const div2 = document.getElementById('2');
-     div2.addEventListener('click', () => {
-          sequenciaJogador.push(2)
-          acenderLuzSetaDireita()
-          setTimeout(() => {
-               apagarLuzSetaDireita()
-          }, 600) 
-          validaDerrota(sequenciaMaquina,sequenciaJogador)
-          mostrarVitoria(sequenciaMaquina,sequenciaJogador)
-     })
-     
-     const div3 = document.getElementById('3');
-     div3.addEventListener('click', () => {
-          sequenciaJogador.push(3)
-          acenderLuzSetaBaixo()
-          setTimeout(() => {
-               apagarLuzSetaBaixo()
-          }, 600) 
-          validaDerrota(sequenciaMaquina,sequenciaJogador)
-          mostrarVitoria(sequenciaMaquina,sequenciaJogador)
-     })
-     
-     const div4 = document.getElementById('4');
-     div4.addEventListener('click', () => {
-          sequenciaJogador.push(4)
-          acenderLuzSetaEsquerda()
-          setTimeout(() => {
-               apagarLuzSetaEsquerda()
-          }, 600)  
-          validaDerrota(sequenciaMaquina,sequenciaJogador)
-          mostrarVitoria(sequenciaMaquina,sequenciaJogador)
-     })
-
-}
 
 const p = document.createElement('p')
 divCircle.appendChild(p)
 
 const chosenStartButton = document.querySelector("#start-button")
-const startEvent = chosenStartButton.addEventListener('click', (event)=>{
+const startButton = chosenStartButton.addEventListener('click', (event)=>{
 
      chosenStartButton.classList.add('display')
      p.innerText = 'Seja bem vindo!'
@@ -128,30 +78,93 @@ const startEvent = chosenStartButton.addEventListener('click', (event)=>{
 
           setTimeout(() => {
                p.innerText = 'Observe a sequencia a seguir:'
+
+               arrayMaquina()
+
                setTimeout(() => {
-                    loopPart()
-               }, 3000)
-          }, 3000)
-     }, 3000) 
+
+                    const div1 = document.getElementById('1');
+                    div1.addEventListener('click', () => { 
+                         sequenciaJogador.push(1)
+                         acenderLuzSetaCima()
+                         setTimeout(() => {
+                              apagarLuzSetaCima()
+                         }, 600)
+
+                         
+                         validaDerrota(sequenciaMaquina,sequenciaJogador);
+                         mostrarVitoria(sequenciaMaquina,sequenciaJogador)
+               
+                    })
+                    
+                    const div2 = document.getElementById('2');
+                    div2.addEventListener('click', () => {
+                         sequenciaJogador.push(2)
+                         acenderLuzSetaDireita()
+                         setTimeout(() => {
+                              apagarLuzSetaDireita()
+                         }, 600)
+                         
+ 
+                         validaDerrota(sequenciaMaquina,sequenciaJogador);
+                         mostrarVitoria(sequenciaMaquina,sequenciaJogador)
+
+                    })
+                    
+                    const div3 = document.getElementById('3');
+                    div3.addEventListener('click', () => {
+                         sequenciaJogador.push(3)
+               
+                         acenderLuzSetaBaixo()
+                         setTimeout(() => {
+                              apagarLuzSetaBaixo()
+                         }, 600) 
+                         validaDerrota(sequenciaMaquina,sequenciaJogador);
+                         mostrarVitoria(sequenciaMaquina,sequenciaJogador)
+               
+                    })
+                    
+                    const div4 = document.getElementById('4');
+                    div4.addEventListener('click', () => {
+                         sequenciaJogador.push(4)
+               
+                         acenderLuzSetaEsquerda()
+                         setTimeout(() => {
+                              apagarLuzSetaEsquerda()
+                         }, 600) 
+
+                         validaDerrota(sequenciaMaquina,sequenciaJogador);
+                         mostrarVitoria(sequenciaMaquina,sequenciaJogador)
+                                       
+                    })
+               }, 2000)
+
+          }, 2000)
+
+     }, 2000) 
+
 })
 
-function mostrarVitoria(sequenciaMaquina,sequenciaJogador) {
+const mostrarVitoria = (sequenciaMaquina,sequenciaJogador) => {
 
      if(sequenciaMaquina.length === sequenciaJogador.length){
           quantidadeVitoria += 1;
           addPontuacaoAtual(quantidadeVitoria);
-          p.innerText = 'Parabéns você acertou!.' 
-          loopPart()   
-     }      
+          p.innerText = 'Parabéns você acertou!.'
+          sequenciaJogador = []
+          arrayMaquina()
+
+     }    
+
 }
 
-
-function validaDerrota(sequenciaMaquina,sequenciaJogador){
+const validaDerrota = (sequenciaMaquina,sequenciaJogador) => {
 
      if(sequenciaMaquina[sequenciaJogador.length -1]  !== sequenciaJogador[sequenciaJogador.length -1]){
           addPontuacao(quantidadeVitoria)
           p.innerText = 'Infelizmente você perdeu.' 
      }
+
 }
 
 const pontuacaoLista = document.getElementById('pontuacao');
@@ -184,11 +197,11 @@ function addPontuacao(qtdpontos){
     if(qtdpontos > primeiroLugar){
         posicao1.innerHTML = `1º Lugar: ${qtdpontos} pontos`
         primeiroLugar = qtdpontos;
-        console.log(primeiroLugar)
+     //    console.log(primeiroLugar)
     }
    if(qtdpontos <= primeiroLugar){
        posicao1.innerHTML = `1º Lugar: ${primeiroLugar} pontos`
-       console.log(primeiroLugar)
+     //   console.log(primeiroLugar)
    }
    if(qtdpontos > segundoLugar && qtdpontos < primeiroLugar){
         posicao2.innerText = `2º Lugar: ${qtdpontos} pontos`
@@ -216,7 +229,7 @@ function addPontuacao(qtdpontos){
 
 
 
-
+// sequenciaMaquina.every()[sequenciaJogador.length -1]  !== sequenciaJogador[sequenciaJogador.length -1]
 
 
                // const eventoClickCima = trianguloCima.addEventListener('click', ()=>{

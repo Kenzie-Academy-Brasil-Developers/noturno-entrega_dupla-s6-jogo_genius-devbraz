@@ -3,6 +3,8 @@ const trianguloDireita = document.querySelector('.triangulo-direita')
 const trianguloBaixo = document.querySelector('.triangulo-baixo')
 const trianguloEsquerda = document.querySelector('.triangulo-esquerda')
 const divCircle = document.querySelector("#circle")
+const placarAtual = document.createElement('h2');
+const pontuacaoLista = document.getElementById('pontuacao');
 
 let max = 4
 
@@ -20,54 +22,57 @@ function arrayMaquina() {
 
      for (let counter = 0; counter < sequenciaMaquina.length; counter++ ) {
 
-
-
-          if(sequenciaMaquina[counter] === 1 ) {
-               setTimeout(() => {
-                    acenderLuzSetaCima()
+          setTimeout(() => {
+               if(sequenciaMaquina[counter] === 1 ) {
                     setTimeout(() => {
-                         apagarLuzSetaCima()
-                    }, 600)  
-               }, 600 * counter)    
-          } 
-          
-          else if (sequenciaMaquina[counter] === 2) {
-               setTimeout(() => {
-                    acenderLuzSetaDireita()
+                         acenderLuzSetaCima()
+                         setTimeout(() => {
+                              apagarLuzSetaCima()
+                         }, 600)  
+                    }, 600 * counter)    
+               } 
+           },1000) 
+          setTimeout(() => {
+               if (sequenciaMaquina[counter] === 2) {
                     setTimeout(() => {
-                         apagarLuzSetaDireita()
-                    }, 600) 
-               }, 600 * counter)  
-          }
-          
-          else if (sequenciaMaquina[counter] === 3) {
-               setTimeout(() => {
-                    acenderLuzSetaBaixo()
+                         acenderLuzSetaDireita()
+                         setTimeout(() => {
+                              apagarLuzSetaDireita()
+                         }, 600) 
+                    }, 600 * counter)  
+               }
+           },1000) 
+          setTimeout(() => {
+               if (sequenciaMaquina[counter] === 3) {
                     setTimeout(() => {
-                         apagarLuzSetaBaixo()
-                    }, 600) 
-               }, 600 * counter) 
-          } 
-          else if (sequenciaMaquina[counter] === 4) {
-               setTimeout(() => {  
-                    acenderLuzSetaEsquerda()
-                    setTimeout(() => {
-                         apagarLuzSetaEsquerda()
-                    }, 600)  
-               }, 600 * counter)   
-          }  
-
-
-
+                         acenderLuzSetaBaixo()
+                         setTimeout(() => {
+                              apagarLuzSetaBaixo()
+                         }, 600) 
+                    }, 600 * counter) 
+               } 
+          },1000) 
+          setTimeout(() => {
+               if (sequenciaMaquina[counter] === 4) {
+                    setTimeout(() => {  
+                         acenderLuzSetaEsquerda()
+                         setTimeout(() => {
+                              apagarLuzSetaEsquerda()
+                         }, 600)  
+                    }, 600 * counter)   
+               } 
+          },1000) 
+ 
      }   
 }
-
 
 const p = document.createElement('p')
 divCircle.appendChild(p)
 
+
 const chosenStartButton = document.querySelector("#start-button")
-const startButton = chosenStartButton.addEventListener('click', (event)=>{
+startButton = chosenStartButton.addEventListener('click', (event)=>{
+
 
      chosenStartButton.classList.add('display')
      p.innerText = 'Seja bem vindo!'
@@ -79,9 +84,9 @@ const startButton = chosenStartButton.addEventListener('click', (event)=>{
           setTimeout(() => {
                p.innerText = 'Observe a sequencia a seguir:'
 
-               arrayMaquina()
-
                setTimeout(() => {
+
+                    arrayMaquina()
 
                     const div1 = document.getElementById('1');
                     div1.addEventListener('click', () => { 
@@ -90,11 +95,7 @@ const startButton = chosenStartButton.addEventListener('click', (event)=>{
                          setTimeout(() => {
                               apagarLuzSetaCima()
                          }, 600)
-
-                         
-                         validaDerrota(sequenciaMaquina,sequenciaJogador);
-                         mostrarVitoria(sequenciaMaquina,sequenciaJogador)
-               
+                         validacao();
                     })
                     
                     const div2 = document.getElementById('2');
@@ -104,11 +105,7 @@ const startButton = chosenStartButton.addEventListener('click', (event)=>{
                          setTimeout(() => {
                               apagarLuzSetaDireita()
                          }, 600)
-                         
- 
-                         validaDerrota(sequenciaMaquina,sequenciaJogador);
-                         mostrarVitoria(sequenciaMaquina,sequenciaJogador)
-
+                         validacao();
                     })
                     
                     const div3 = document.getElementById('3');
@@ -119,9 +116,7 @@ const startButton = chosenStartButton.addEventListener('click', (event)=>{
                          setTimeout(() => {
                               apagarLuzSetaBaixo()
                          }, 600) 
-                         validaDerrota(sequenciaMaquina,sequenciaJogador);
-                         mostrarVitoria(sequenciaMaquina,sequenciaJogador)
-               
+                         validacao();
                     })
                     
                     const div4 = document.getElementById('4');
@@ -132,11 +127,9 @@ const startButton = chosenStartButton.addEventListener('click', (event)=>{
                          setTimeout(() => {
                               apagarLuzSetaEsquerda()
                          }, 600) 
-
-                         validaDerrota(sequenciaMaquina,sequenciaJogador);
-                         mostrarVitoria(sequenciaMaquina,sequenciaJogador)
-                                       
+                         validacao();             
                     })
+
                }, 2000)
 
           }, 2000)
@@ -145,7 +138,80 @@ const startButton = chosenStartButton.addEventListener('click', (event)=>{
 
 })
 
-const mostrarVitoria = (sequenciaMaquina,sequenciaJogador) => {
+const validacao = () => {
+
+     if(sequenciaMaquina[sequenciaJogador.length -1]  !== sequenciaJogador[sequenciaJogador.length -1]){
+          addPontuacao(quantidadeVitoria)
+          p.innerText = 'Infelizmente você perdeu.'
+          divCircle.innerHTML = ''
+
+          startButton = chosenStartButton.addEventListener('click', (event)=>{
+
+
+               chosenStartButton.classList.add('display')
+               p.innerText = 'Seja bem vindo!'
+          
+               setTimeout(() => {
+          
+                    p.innerText = 'O jogo vai começar em breve...'
+          
+                    setTimeout(() => {
+                         p.innerText = 'Observe a sequencia a seguir:'
+          
+                         setTimeout(() => {
+          
+                              arrayMaquina()
+          
+                              const div1 = document.getElementById('1');
+                              div1.addEventListener('click', () => { 
+                                   sequenciaJogador.push(1)
+                                   acenderLuzSetaCima()
+                                   setTimeout(() => {
+                                        apagarLuzSetaCima()
+                                   }, 600)
+                                   validacao();
+                              })
+                              
+                              const div2 = document.getElementById('2');
+                              div2.addEventListener('click', () => {
+                                   sequenciaJogador.push(2)
+                                   acenderLuzSetaDireita()
+                                   setTimeout(() => {
+                                        apagarLuzSetaDireita()
+                                   }, 600)
+                                   validacao();
+                              })
+                              
+                              const div3 = document.getElementById('3');
+                              div3.addEventListener('click', () => {
+                                   sequenciaJogador.push(3)
+                         
+                                   acenderLuzSetaBaixo()
+                                   setTimeout(() => {
+                                        apagarLuzSetaBaixo()
+                                   }, 600) 
+                                   validacao();
+                              })
+                              
+                              const div4 = document.getElementById('4');
+                              div4.addEventListener('click', () => {
+                                   sequenciaJogador.push(4)
+                         
+                                   acenderLuzSetaEsquerda()
+                                   setTimeout(() => {
+                                        apagarLuzSetaEsquerda()
+                                   }, 600) 
+                                   validacao();             
+                              })
+          
+                         }, 2000)
+          
+                    }, 2000)
+          
+               }, 2000) 
+          
+          })
+     }
 
      if(sequenciaMaquina.length === sequenciaJogador.length){
           quantidadeVitoria += 1;
@@ -154,29 +220,17 @@ const mostrarVitoria = (sequenciaMaquina,sequenciaJogador) => {
           sequenciaJogador = []
           arrayMaquina()
 
-     }    
+     }  
 
 }
 
-const validaDerrota = (sequenciaMaquina,sequenciaJogador) => {
-
-     if(sequenciaMaquina[sequenciaJogador.length -1]  !== sequenciaJogador[sequenciaJogador.length -1]){
-          addPontuacao(quantidadeVitoria)
-          p.innerText = 'Infelizmente você perdeu.' 
-     }
-
-}
-
-const pontuacaoLista = document.getElementById('pontuacao');
 
 function addPontuacaoAtual(ptAtual){
-    const placarAtual = document.createElement('h2');
+
     placarAtual.classList.add('placar_atual');
-
     placarAtual.innerHTML = `Pontuação Atual: ${ptAtual}`;
-
     pontuacaoLista.appendChild(placarAtual);
-    //*
+
 }
 
 function addPontuacao(qtdpontos){
@@ -222,44 +276,3 @@ function addPontuacao(qtdpontos){
    pontuacaoLista.appendChild(listaPontuacao)
 
 }
-
-
-
-
-
-
-
-// sequenciaMaquina.every()[sequenciaJogador.length -1]  !== sequenciaJogador[sequenciaJogador.length -1]
-
-
-               // const eventoClickCima = trianguloCima.addEventListener('click', ()=>{
-               //      acenderLuzSetaCima()
-               //      setTimeout(() => {
-               //           apagarLuzSetaCima()
-               //      }, 600)  
-               //      sequenciaJogador.push(1)
-               // })
-               
-               // const eventoClickDireita = trianguloDireita.addEventListener('click', ()=>{
-               //      acenderLuzSetaDireita()
-               //      setTimeout(() => {
-               //           apagarLuzSetaDireita()
-               //      }, 600) 
-               //      sequenciaJogador.push(2)
-               // })
-               
-               // const eventoClickBaixo = trianguloBaixo.addEventListener('click', ()=>{
-               //      acenderLuzSetaBaixo()
-               //      setTimeout(() => {
-               //           apagarLuzSetaBaixo()
-               //      }, 600) 
-               //      sequenciaJogador.push(3)
-               // })
-               
-               // const eventoClickEsquerda = trianguloEsquerda.addEventListener('click', ()=>{
-               //      acenderLuzSetaEsquerda()
-               //      setTimeout(() => {
-               //           apagarLuzSetaEsquerda()
-               //      }, 600)  
-               //      sequenciaJogador.push(4)
-               // })

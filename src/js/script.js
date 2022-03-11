@@ -181,8 +181,16 @@ const validacao = () => {
 
           addPontuacao(quantidadeVitoria)
           p.innerText = 'Infelizmente você perdeu.'
-          return
+     
+          // setTimeout(() => {
+          //      p.innerText = ''
+          //      setTimeout(() => {
+          //           chosenStartButton.classList.remove('display')
+          //      }, 600)
+          // }, 2000)
 
+          return true
+          
      }
 
      if(sequenciaMaquina.length === sequenciaJogador.length) {
@@ -190,6 +198,7 @@ const validacao = () => {
           quantidadeVitoria += 1
           addPontuacaoAtual(quantidadeVitoria)
           sequenciaJogador = []
+          
 
           setTimeout(() => {
 

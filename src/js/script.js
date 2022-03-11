@@ -11,7 +11,7 @@ let max = 4
 function numeroAleatorio(max) {
 
      return Math.floor(Math.random() * max + 1)
-     
+
 }
 
 let sequenciaMaquina = []
@@ -86,6 +86,16 @@ function arrayMaquina() {
  
      }  
 
+     if (sequenciaMaquina.length === 1) {
+
+          setTimeout(() => {
+
+               p.innerText = 'Faça a sequência.'
+
+          }, 2000) 
+               
+     }
+
 }
 
 const p = document.createElement('p')
@@ -103,7 +113,7 @@ startButton = chosenStartButton.addEventListener('click', (event)=> {
 
           setTimeout(() => {
 
-               p.innerText = 'Observe a sequencia a seguir:'
+               p.innerText = 'Observe a sequência a seguir:'
 
                setTimeout(() => {
 
@@ -172,16 +182,29 @@ const validacao = () => {
           addPontuacao(quantidadeVitoria)
           p.innerText = 'Infelizmente você perdeu.'
           return
+
      }
 
      if(sequenciaMaquina.length === sequenciaJogador.length) {
 
           quantidadeVitoria += 1
           addPontuacaoAtual(quantidadeVitoria)
-          p.innerText = 'Parabéns você acertou!.'
           sequenciaJogador = []
-          arrayMaquina()
 
+          setTimeout(() => {
+
+               p.innerText = 'Parabéns você acertou!.'
+
+               setTimeout(() => {
+
+                    p.innerText = 'Faça a nova sequência.'
+
+                    setTimeout(() => {arrayMaquina()}, 2000) 
+
+               }, 2000) 
+
+          }, 2000) 
+    
      }  
 
 }

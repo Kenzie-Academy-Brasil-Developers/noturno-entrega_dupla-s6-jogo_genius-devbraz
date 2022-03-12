@@ -141,12 +141,14 @@ const validacao = () => {
 
           addPontuacao(quantidadeVitoria)
           p.innerText = 'Infelizmente você perdeu.'
+
           setTimeout(() => {
                p.classList.add('display')
                chosenResetButton.classList.remove('display')
           }, 2000)
           
           sequenciaJogador =1;
+
      }
 
      for(let contador = 0;contador < sequenciaMaquina.length; contador++){
@@ -182,11 +184,13 @@ const validacao = () => {
           p.classList.remove('display')   
           sequenciaMaquina = []
           sequenciaJogador = []
+
           quantidadeVitoria = 0;
 
      setTimeout(() => {
 
           p.innerText = 'O jogo vai começar em breve...'
+
 
           setTimeout(() => {
 

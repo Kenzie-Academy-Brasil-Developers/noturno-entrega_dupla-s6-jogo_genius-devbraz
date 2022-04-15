@@ -1,494 +1,414 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
 
-*{
-
-    margin: 0px;
-    padding: 0px;
-
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-div{
-
-    display: flex;
-    justify-content: center;
-      
+div {
+  display: flex;
+  justify-content: center;
 }
 
-body{
-
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.898);
-    margin-top: 30px;
-
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.898);
+  margin-top: 30px;
 }
 
 #meio {
-
-    text-align: center;
-    align-items: center;
-
+  text-align: center;
+  align-items: center;
 }
 
-.triangulo-cima-aceso{
-
-    width: 0px;
-    height: 0px;
-    border-left: 62.5px solid transparent;
-    border-right: 62.5px solid transparent;
-    transition: all .6s;
-    border-bottom: 375px solid rgb(0, 177, 0);
-    cursor: pointer; 
-
+.triangulo-cima-aceso {
+  width: 0px;
+  height: 0px;
+  border-left: 62.5px solid transparent;
+  border-right: 62.5px solid transparent;
+  transition: all 0.6s;
+  border-bottom: 375px solid rgb(0, 177, 0);
+  cursor: pointer;
 }
 
-.triangulo-cima-apagado{
-
-    width: 0px;
-    height: 0px;
-    border-left: 62.5px solid transparent;
-    border-right: 62.5px solid transparent;
-    border-bottom: 375px solid rgb(0, 85, 0);
-    cursor: pointer;
-
+.triangulo-cima-apagado {
+  width: 0px;
+  height: 0px;
+  border-left: 62.5px solid transparent;
+  border-right: 62.5px solid transparent;
+  border-bottom: 375px solid rgb(0, 85, 0);
+  cursor: pointer;
 }
 
-.triangulo-baixo-aceso{
-
-    width: 0;
-    height: 0;
-    border-left: 62.5px solid transparent;
-    border-right: 62.5px solid transparent;
-    border-top: 375px solid rgb(49, 49, 255);
-    cursor: pointer;
-    transition: all .6s;
-
+.triangulo-baixo-aceso {
+  width: 0;
+  height: 0;
+  border-left: 62.5px solid transparent;
+  border-right: 62.5px solid transparent;
+  border-top: 375px solid rgb(49, 49, 255);
+  cursor: pointer;
+  transition: all 0.6s;
 }
 
-.triangulo-baixo-apagado{
-
-    width: 0;
-    height: 0;
-    border-left: 62.5px solid transparent;
-    border-right: 62.5px solid transparent;
-    border-top: 375px solid rgb(14, 14, 136);
-    cursor: pointer;
-
-    
+.triangulo-baixo-apagado {
+  width: 0;
+  height: 0;
+  border-left: 62.5px solid transparent;
+  border-right: 62.5px solid transparent;
+  border-top: 375px solid rgb(14, 14, 136);
+  cursor: pointer;
 }
 
-.triangulo-esquerda-aceso{
-
-    width: 0;
-    height: 0;
-    border-top: 62.5px solid transparent;
-    border-bottom: 62.5px solid transparent;
-    border-right: 437.5px solid rgb(155, 55, 255);
-    cursor: pointer;
-    transition: all .6s; 
-
+.triangulo-esquerda-aceso {
+  width: 0;
+  height: 0;
+  border-top: 62.5px solid transparent;
+  border-bottom: 62.5px solid transparent;
+  border-right: 437.5px solid rgb(155, 55, 255);
+  cursor: pointer;
+  transition: all 0.6s;
 }
 
-.triangulo-esquerda-apagado{
-
-    width: 0;
-    height: 0;
-    border-top: 62.5px solid transparent;
-    border-bottom: 62.5px solid transparent;
-    border-right: 437.5px solid rgb(82, 0, 163);   
-    cursor: pointer; 
-
+.triangulo-esquerda-apagado {
+  width: 0;
+  height: 0;
+  border-top: 62.5px solid transparent;
+  border-bottom: 62.5px solid transparent;
+  border-right: 437.5px solid rgb(82, 0, 163);
+  cursor: pointer;
 }
 
-.triangulo-direita-aceso{
-
-    width: 0;
-    height: 0;
-    border-top: 62.5px solid transparent;
-    border-bottom: 62.5px solid transparent;
-    border-left: 437.5px solid orangered;
-    transition: all .6s;
-    cursor: pointer;
-
+.triangulo-direita-aceso {
+  width: 0;
+  height: 0;
+  border-top: 62.5px solid transparent;
+  border-bottom: 62.5px solid transparent;
+  border-left: 437.5px solid orangered;
+  transition: all 0.6s;
+  cursor: pointer;
 }
 
-.triangulo-direita-apagado{
-
-    width: 0;
-    height: 0;
-    border-top: 62.5px solid transparent;
-    border-bottom: 62.5px solid transparent;
-    border-left: 437.5px solid rgb(126, 34, 0);
-    cursor: pointer;
-
+.triangulo-direita-apagado {
+  width: 0;
+  height: 0;
+  border-top: 62.5px solid transparent;
+  border-bottom: 62.5px solid transparent;
+  border-left: 437.5px solid rgb(126, 34, 0);
+  cursor: pointer;
 }
 
-#circle{
-
-    position: absolute;
-    width: 187.5px;
-    height: 187.5px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.898);
-    color: black;
-    text-align: center;
-    align-items: center;
-
+#circle {
+  position: absolute;
+  width: 187.5px;
+  height: 187.5px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.898);
+  color: black;
+  text-align: center;
+  align-items: center;
 }
 
-#square{
-
-    position: absolute;
-    width: 183.5px;
-    height: 183.5px;
-    background-color:rgba(0, 0, 0, 0.898);
-    text-align: center;
-    align-items: center;
-    transform: rotate(45deg);
-
+#square {
+  position: absolute;
+  width: 183.5px;
+  height: 183.5px;
+  background-color: rgba(0, 0, 0, 0.898);
+  text-align: center;
+  align-items: center;
+  transform: rotate(45deg);
 }
 
 button {
-
-    background: none;
-    border: none;
-    position: absolute;
-    width: 120px;
-    height: 25px;
-    color: white;
-    transform: rotate(-45deg);
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    font-size: 25px;
-
+  background: none;
+  border: none;
+  position: absolute;
+  width: 120px;
+  height: 25px;
+  color: white;
+  transform: rotate(-45deg);
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-button:hover{
-
-    cursor: pointer;
-
+button:hover {
+  cursor: pointer;
 }
 
 .display {
-
-    display: none;
-
+  display: none;
 }
 
 p {
-
-    color: white;
-    transform: rotate(-45deg);
-    font-family: 'Raleway', sans-serif;
-
+  color: white;
+  transform: rotate(-45deg);
+  font-family: "Raleway", sans-serif;
 }
-.lista_pontuacao{
-    margin-top: 50px;
+.lista_pontuacao {
+  margin-top: 50px;
 }
 
-#pontuacao{
-
-    height: 25%;
-    width: 25%;
-    background-color: rgba(0, 0, 0, 0.651);
-    position: absolute;
-    right: 5%;
-    top: 10%;
-    text-align: center;
-    flex-direction: column;
-    font-family: 'Raleway', sans-serif;
-    color: white;
-    border-radius: 10px;
-    margin: 0px;
-    padding-top: 0;
-    justify-content: start;
-    text-decoration: none;
-
+#pontuacao {
+  height: 25%;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.651);
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  text-align: center;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  border-radius: 10px;
+  margin: 0px;
+  padding-top: 0;
+  justify-content: start;
+  text-decoration: none;
 }
 
-#pontuacao h1{
-
-    background-color: rgba(24, 23, 23, 0.788);
-    border-radius: 10px 10px 0px 0px;
-    padding: 10px;
-    margin-bottom: 10px;
-
+#pontuacao h1 {
+  background-color: rgba(24, 23, 23, 0.788);
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-#pontuacao p{
-
-    padding: 10px;  
-
+#pontuacao p {
+  padding: 10px;
 }
 
 #pontuacao ol {
-
-    list-style: none;
-    padding: 5px;
-
+  list-style: none;
+  padding: 5px;
 }
 
-#pontuacao ol li{
-
-    padding: 5px;
-
+#pontuacao ol li {
+  padding: 5px;
 }
 
 .gradient-border {
-
-    --borderWidth: 3px;
-    background: #1D1F20;
-    position: relative;
-    border-radius: var(--borderWidth);  
-
+  --borderWidth: 3px;
+  background: #1d1f20;
+  position: relative;
+  border-radius: var(--borderWidth);
 }
 
 .gradient-border:after {
-
-    content: '';
-    position: absolute;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-    border-radius: calc(2 * var(--borderWidth));
-    z-index: -1;
-    animation: animatedgradient 3s ease alternate infinite;
-    background-size: 300% 300%;
-
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
 }
-   
+
 @keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
 
-    0% {
+  50% {
+    background-position: 100% 50%;
+  }
 
-        background-position: 0% 50%;
-
-    }
-
-    50% {
-
-        background-position: 100% 50%;
-
-    }
-
-    100% {
-
-        background-position: 0% 50%;
-
-    }
-    
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .border-efect {
-
-    border:5px solid rgba(0, 0, 0, 0.898);
-    transform: rotate(45deg);
-    border-radius: 50%;
-    border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
-
+  border: 5px solid rgba(0, 0, 0, 0.898);
+  transform: rotate(45deg);
+  border-radius: 50%;
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E")
+    1;
 }
 
-#baixo{
-
-    flex-direction: row-reverse;
-
+#baixo {
+  flex-direction: row-reverse;
 }
 
 .game-name {
-
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    user-select: none;
-    top: 5%;
-    width: 25%;
-    height: 25%;
-    font-size: 600%;
-    float: left;
-    position: absolute;
-    left: 5%;
-
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  user-select: none;
+  top: 5%;
+  width: 25%;
+  height: 25%;
+  font-size: 600%;
+  float: left;
+  position: absolute;
+  left: 5%;
 }
 
 .game-name1 {
-
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    user-select: none;
-    top: 15%;
-    width: 10%;
-    height: 10%;
-    font-size: 600%;
-    float: left;
-    position: absolute;
-    left: 20%;
-
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  user-select: none;
+  top: 15%;
+  width: 10%;
+  height: 10%;
+  font-size: 600%;
+  float: left;
+  position: absolute;
+  left: 20%;
 }
 
 .game-developers {
-
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    user-select: none;
-    width: 10%;
-    height: 10%;
-    font-size: 70px;
-    float: right;
-    position: absolute;
-    right: 25%;
-    bottom: 25%;
-
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  user-select: none;
+  width: 10%;
+  height: 10%;
+  font-size: 70px;
+  float: right;
+  position: absolute;
+  right: 25%;
+  bottom: 25%;
 }
 
 .game-developers-charles {
-
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    user-select: none;
-    width: 30%;
-    height: 10%;
-    font-size: 50px;
-    float: right;
-    position: absolute;
-    right: 12%;
-    bottom: 12%;
-    color: black; 
-
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  user-select: none;
+  width: 30%;
+  height: 10%;
+  font-size: 50px;
+  float: right;
+  position: absolute;
+  right: 12%;
+  bottom: 12%;
+  color: black;
 }
 
 .game-developers-claudio {
-
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    user-select: none;
-    width: 30%;
-    height: 10%;
-    font-size: 50px;
-    float: right;
-    position: absolute;
-    right: 2%;
-    bottom: 18%;
-
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  user-select: none;
+  width: 30%;
+  height: 10%;
+  font-size: 50px;
+  float: right;
+  position: absolute;
+  right: 2%;
+  bottom: 18%;
 }
 
 .rainbow-text {
-
-    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red);
-    background-size: 800% 800%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbow 8s ease infinite;
-
+  background-image: repeating-linear-gradient(
+    45deg,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 8s ease infinite;
 }
 
 @keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
 
-    0% {
+  50% {
+    background-position: 100% 25%;
+  }
 
-        background-position: 0% 50%;
-
-    }
-
-    50% {
-
-        background-position: 100% 25%;
-
-    }
-
-    100% {
-
-        background-position: 0% 50%;
-
-    }
-
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .regras {
-
-    height: 25%;
-    width: 25%;
-    background-color: rgba(0, 0, 0, 0.651);
-    position: absolute;
-    left: 5%;
-    bottom: 5%;
-    text-align: left;
-    flex-direction: column;
-    font-family: 'Raleway', sans-serif;
-    color: white;
-    border-radius: 10px;
-    margin: 0px;
-    padding: 0px;
-    justify-content: start;
-    text-decoration: none;
-    overflow: scroll;
-
+  height: 25%;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.651);
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  text-align: left;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 0px;
+  justify-content: start;
+  text-decoration: none;
+  overflow: scroll;
 }
 
 .regras div {
-
-    background-color: rgba(24, 23, 23, 0.788);
-    text-align: center;
-
+  background-color: rgba(24, 23, 23, 0.788);
+  text-align: center;
 }
 
-.regras h1{
-
-    background-color: rgba(24, 23, 23, 0.788);
-    border-radius: 10px 10px 0px 0px;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-family: 'Raleway', sans-serif;
-
+.regras h1 {
+  background-color: rgba(24, 23, 23, 0.788);
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
 }
 
-.regras p{
-
-    padding: 10px; 
-    font-family: 'Raleway', sans-serif; 
-
+.regras p {
+  padding: 10px;
+  font-family: "Raleway", sans-serif;
 }
 
-.regras li{
-
-    padding: 5px;
-    font-family: 'Raleway', sans-serif;
-
+.regras li {
+  padding: 5px;
+  font-family: "Raleway", sans-serif;
 }
 
 ::-webkit-scrollbar {
-
-    width: 20px;
-
+  width: 20px;
 }
-  
-::-webkit-scrollbar-track {
 
+::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.898);
   border-radius: 10px;
-
 }
 
 ::-webkit-scrollbar-thumb {
-
-  background: rgb(43, 43, 43); 
+  background: rgb(43, 43, 43);
   border-radius: 10px;
-
 }
 
 .tapar {
-    left: 28.4%;
-    bottom: 5%;
-    background-color:rgba(0, 0, 0, 0.898);
-    float: left;
-    position: absolute;
-    width: 40px;
-    height: 15px;
-
+  left: 28.4%;
+  bottom: 5%;
+  background-color: rgba(0, 0, 0, 0.898);
+  float: left;
+  position: absolute;
+  width: 40px;
+  height: 15px;
 }
 
-#reset{
-   /*transform: rotate(0deg);
+#reset {
+  /*transform: rotate(0deg);
     color: white;
     background-color: white;
     height: 70px;
@@ -499,22 +419,20 @@ p {
     background-color: rgba(0, 0, 0, 0.898);*/
 }
 
-
-#Titulo{
-    height: 51px;
-    width: 25%;
-    background-color: rgba(0, 0, 0, 0.651);
-    position: absolute;
-    right: 5%;
-    top: 5%;
-    text-align: center;
-    flex-direction: column;
-    font-family: 'Raleway', sans-serif;
-    color: white;
-    border-radius: 10px;
-    margin: 0px;
-    padding: 0px;
-    justify-content: start;
-    text-decoration: none;
+#Titulo {
+  height: 51px;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.651);
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  text-align: center;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 0px;
+  justify-content: start;
+  text-decoration: none;
 }
-
